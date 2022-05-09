@@ -1232,13 +1232,7 @@ export type AllProductsQuery = {
     description?: string | null;
     category?: string | null;
     price?: string | null;
-    reviews: Array<{
-      __typename?: "Review";
-      id: string;
-      title?: string | null;
-      detailed_review?: string | null;
-      user?: { __typename?: "User"; id: string; name?: string | null } | null;
-    }>;
+    reviews: Array<{ __typename?: "Review"; id: string; title?: string | null; detailed_review?: string | null }>;
     photo?: {
       __typename?: "ProductImage";
       id: string;
@@ -1305,6 +1299,7 @@ export type UserQuery = {
     name?: string | null;
     email?: string | null;
     isAdmin?: boolean | null;
+    reviews: Array<{ __typename?: "Review"; id: string; title?: string | null; detailed_review?: string | null }>;
   } | null;
 };
 
@@ -1367,10 +1362,6 @@ export const AllProductsDocument = gql`
         id
         title
         detailed_review
-        user {
-          id
-          name
-        }
       }
       photo {
         id
@@ -1571,6 +1562,11 @@ export const UserDocument = gql`
         name
         email
         isAdmin
+        reviews {
+          id
+          title
+          detailed_review
+        }
       }
     }
   }

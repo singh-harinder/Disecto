@@ -9,10 +9,10 @@ query allProducts {
       id
       title
       detailed_review
-      user {
-        id
-        name
-      }
+      # user {
+      #   id
+      #   name
+      # }
     }
     photo {
       id

@@ -5,6 +5,11 @@ query User {
       name
       email
       isAdmin
+      reviews {
+        id
+        title
+        detailed_review
+      }
     }
   }
 }
