@@ -1,0 +1,25 @@
+query allProducts {
+  allProducts {
+    id
+    title
+    description
+    category
+    price
+    reviews {
+      id
+      title
+      detailed_review
+      user {
+        id
+        name
+      }
+    }
+    photo {
+      id
+      image {
+        publicUrlTransformed
+      }
+      altText
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query searchProducts($searchTerm: String!) {
+  searchTerms: allProducts(
+    where: { OR: [{ title_contains_i: $searchTerm }, { description_contains_i: $searchTerm }] }
+  ) {
+    id
+    title
+    photo {
+      image {
+        publicUrlTransformed
+      }
+    }
+  }
+}
