@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Router from "next/router";
 import { useEffect } from "react";
+import LoadingAnimation from "../components/Loading";
 import { useUserQuery } from "../types/generated-queries";
 
 function Dashboard() {
@@ -17,6 +18,8 @@ function Dashboard() {
       }).catch(() => {});
     }
   }, [user.data?.authenticatedItem?.isAdmin, user.loading]);
+
+  if (user.loading) return <LoadingAnimation />;
 
   return (
     <div>
