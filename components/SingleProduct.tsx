@@ -55,9 +55,9 @@ function SingleProduct({ id }: { id: string }) {
           <div className="mb-2 mt-10 text-xl font-bold">Reviews: {data?.Product?.reviews.length}</div>
           <div>
             {data?.Product?.reviews.map((review) => (
-              <div key={review.id} className="ml-10 mt-10 w-full border-8 border-red-500">
-                <p className="text-xl font-semibold italic">{review.title}</p>
-                <p className="font-extralight italic">by: {review.user?.name}</p>
+              <div key={review.id} className="ml-10 mt-10 w-full rounded-lg border-2 border-black">
+                <p className="ml-2 text-xl font-semibold italic">{review.title}</p>
+                <p className="ml-2 font-extralight italic">by: {review.user?.name}</p>
                 <p className="ml-10 mt-4">{review.detailed_review}</p>
               </div>
             ))}
